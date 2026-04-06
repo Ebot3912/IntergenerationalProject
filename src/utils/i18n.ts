@@ -259,6 +259,88 @@ type TranslationKeys = {
   'voice.notUnderstood': string;
   'voice.micDenied': string;
   'voice.webOnly': string;
+
+  // Diet & Wellness
+  'tabs.diet': string;
+  'diet.title': string;
+  'diet.subtitle': string;
+  'diet.dailyTips': string;
+  'diet.sampleMeals': string;
+  'diet.tipWater': string;
+  'diet.tipWaterDesc': string;
+  'diet.tipFruits': string;
+  'diet.tipFruitsDesc': string;
+  'diet.tipGrains': string;
+  'diet.tipGrainsDesc': string;
+  'diet.tipProtein': string;
+  'diet.tipProteinDesc': string;
+  'diet.tipDairy': string;
+  'diet.tipDairyDesc': string;
+  'diet.tipSugar': string;
+  'diet.tipSugarDesc': string;
+  'diet.breakfast': string;
+  'diet.breakfastItems': string;
+  'diet.lunch': string;
+  'diet.lunchItems': string;
+  'diet.dinner': string;
+  'diet.dinnerItems': string;
+  'diet.snacks': string;
+  'diet.snackItems': string;
+  'diet.disclaimer': string;
+  'diet.aiCardTitle': string;
+  'diet.aiCardDesc': string;
+  'diet.aiTitle': string;
+  'diet.aiSubtitle': string;
+  'diet.chatEmpty': string;
+  'diet.aiTyping': string;
+  'diet.inputPlaceholder': string;
+  'diet.aiError': string;
+  'diet.q1': string;
+  'diet.q2': string;
+  'diet.q3': string;
+  'diet.q4': string;
+  'diet.q5': string;
+  'diet.q6': string;
+
+  // Compass AI
+  'ai.title': string;
+  'ai.subtitle': string;
+  'ai.tabChat': string;
+  'ai.tabDiet': string;
+  'ai.tabRecipes': string;
+  'ai.chatWelcome': string;
+  'ai.chatDesc': string;
+  'ai.inputPlaceholder': string;
+  'ai.topicDiet': string;
+  'ai.topicExercise': string;
+  'ai.topicHealth': string;
+  'ai.topicTech': string;
+  'ai.topicChat': string;
+  'ai.topicGames': string;
+  'ai.promptDiet': string;
+  'ai.promptExercise': string;
+  'ai.promptHealth': string;
+  'ai.promptTech': string;
+  'ai.promptChat': string;
+  'ai.promptGames': string;
+  'ai.voiceThinking': string;
+  // Recipes
+  'recipes.title': string;
+  'recipes.subtitle': string;
+  'recipes.featured': string;
+  'recipes.recipe1.name': string;
+  'recipes.recipe1.time': string;
+  'recipes.recipe1.desc': string;
+  'recipes.recipe2.name': string;
+  'recipes.recipe2.time': string;
+  'recipes.recipe2.desc': string;
+  'recipes.recipe3.name': string;
+  'recipes.recipe3.time': string;
+  'recipes.recipe3.desc': string;
+  'recipes.recipe4.name': string;
+  'recipes.recipe4.time': string;
+  'recipes.recipe4.desc': string;
+  'recipes.askAI': string;
 };
 
 type Translations = Record<LangCode, TranslationKeys>;
@@ -469,6 +551,87 @@ export const translations: Translations = {
     'voice.notUnderstood': 'I didn\'t understand that. Try again.',
     'voice.micDenied': 'Microphone access denied. Please allow microphone permission.',
     'voice.webOnly': 'Voice commands work best on web. Try saying a command in your browser!',
+
+    // Diet & Wellness
+    'tabs.diet': 'Compass',
+    'diet.title': 'Diet & Wellness',
+    'diet.subtitle': 'Healthy eating tips and AI-powered nutrition advice',
+    'diet.dailyTips': 'Daily Nutrition Tips',
+    'diet.sampleMeals': 'Sample Meal Ideas',
+    'diet.tipWater': 'Stay Hydrated',
+    'diet.tipWaterDesc': 'Drink 6-8 glasses of water daily. Add lemon or fruit for flavor.',
+    'diet.tipFruits': 'Eat More Fruits',
+    'diet.tipFruitsDesc': 'Aim for 2-3 servings of colorful fruits every day.',
+    'diet.tipGrains': 'Whole Grains',
+    'diet.tipGrainsDesc': 'Choose brown rice, oats, and whole wheat bread over refined grains.',
+    'diet.tipProtein': 'Lean Protein',
+    'diet.tipProteinDesc': 'Include fish, chicken, beans, or tofu in your meals.',
+    'diet.tipDairy': 'Calcium Rich',
+    'diet.tipDairyDesc': 'Milk, yogurt, and cheese help keep bones strong.',
+    'diet.tipSugar': 'Limit Sugar',
+    'diet.tipSugarDesc': 'Reduce sugary drinks and snacks. Try fresh fruit instead.',
+    'diet.breakfast': 'Breakfast',
+    'diet.breakfastItems': 'Oatmeal with berries, whole wheat toast with avocado, or yogurt with granola',
+    'diet.lunch': 'Lunch',
+    'diet.lunchItems': 'Grilled chicken salad, vegetable soup with bread, or a turkey sandwich',
+    'diet.dinner': 'Dinner',
+    'diet.dinnerItems': 'Baked salmon with vegetables, stir-fry with brown rice, or pasta with tomato sauce',
+    'diet.snacks': 'Snacks',
+    'diet.snackItems': 'Nuts, fresh fruit, hummus with veggies, or cheese with crackers',
+    'diet.disclaimer': 'This information is for general wellness only. Always consult your doctor or dietitian for personalized dietary advice.',
+    'diet.aiCardTitle': 'Compass AI',
+    'diet.aiCardDesc': 'Ask me anything!',
+    'diet.aiTitle': 'Compass AI',
+    'diet.aiSubtitle': 'Your AI Assistant',
+    'diet.chatEmpty': 'Ask me anything — health, tech, daily life, or just chat!',
+    'diet.aiTyping': 'Thinking...',
+    'diet.inputPlaceholder': 'Ask me anything...',
+    'diet.aiError': 'Sorry, I could not get a response. Please try again.',
+    'diet.q1': 'What should I eat for breakfast?',
+    'diet.q2': 'How can I eat healthier on a budget?',
+    'diet.q3': 'What foods help with energy?',
+    'diet.q4': 'Best snacks for seniors?',
+    'diet.q5': 'Help me plan my day',
+    'diet.q6': 'How do I use this app?',
+    // Compass AI
+    'ai.title': 'Compass AI',
+    'ai.subtitle': 'Your AI Assistant',
+    'ai.tabChat': 'Chat',
+    'ai.tabDiet': 'Nutrition',
+    'ai.tabRecipes': 'Recipes',
+    'ai.chatWelcome': 'Hi! I\'m Compass AI \u{1F9ED}',
+    'ai.chatDesc': 'Ask me about anything \u2014 health, technology, daily life, recipes, or just have a chat!',
+    'ai.inputPlaceholder': 'Ask me anything...',
+    'ai.topicDiet': 'Nutrition',
+    'ai.topicExercise': 'Exercise',
+    'ai.topicHealth': 'Health',
+    'ai.topicTech': 'Tech Help',
+    'ai.topicChat': 'Just Chat',
+    'ai.topicGames': 'Game Tips',
+    'ai.promptDiet': 'What should I eat today for a balanced diet?',
+    'ai.promptExercise': 'What are some gentle exercises I can do at home?',
+    'ai.promptHealth': 'How can I improve my sleep quality?',
+    'ai.promptTech': 'How do I send a photo to someone on my phone?',
+    'ai.promptChat': 'Tell me something interesting that happened today in history',
+    'ai.promptGames': 'What are some tips for winning at chess?',
+    'ai.voiceThinking': 'Let me think about that...',
+    // Recipes
+    'recipes.title': 'Featured Recipes',
+    'recipes.subtitle': 'Delicious dishes to brighten your day',
+    'recipes.featured': 'Today\'s Picks',
+    'recipes.recipe1.name': 'Classic Chicken Noodle Soup',
+    'recipes.recipe1.time': '45 min',
+    'recipes.recipe1.desc': 'A warm, comforting bowl of homemade chicken soup with egg noodles and fresh vegetables.',
+    'recipes.recipe2.name': 'Fluffy Blueberry Pancakes',
+    'recipes.recipe2.time': '20 min',
+    'recipes.recipe2.desc': 'Light and fluffy pancakes bursting with fresh blueberries, served with maple syrup.',
+    'recipes.recipe3.name': 'Garlic Butter Shrimp Pasta',
+    'recipes.recipe3.time': '25 min',
+    'recipes.recipe3.desc': 'Succulent shrimp tossed in garlic butter sauce with linguine and fresh parsley.',
+    'recipes.recipe4.name': 'Homemade Apple Pie',
+    'recipes.recipe4.time': '90 min',
+    'recipes.recipe4.desc': 'A classic American apple pie with a flaky golden crust and cinnamon-spiced filling.',
+    'recipes.askAI': 'Ask Compass AI for the full recipe and step-by-step instructions!',
   },
 
   zh: {
@@ -676,6 +839,56 @@ export const translations: Translations = {
     'voice.notUnderstood': '没有理解，请再试一次。',
     'voice.micDenied': '麦克风权限被拒绝。请允许麦克风访问。',
     'voice.webOnly': '语音命令在网页浏览器中效果最佳！',
+
+    // Diet
+    'tabs.diet': '指南针',
+    'diet.title': '饮食与健康',
+    'diet.subtitle': '健康饮食建议和AI营养咨询',
+    'diet.dailyTips': '每日营养建议',
+    'diet.sampleMeals': '推荐菜谱',
+    'diet.tipWater': '多喝水', 'diet.tipWaterDesc': '每天喝6-8杯水，可以加柠檬或水果调味。',
+    'diet.tipFruits': '多吃水果', 'diet.tipFruitsDesc': '每天吃2-3份色彩丰富的水果。',
+    'diet.tipGrains': '全谷物', 'diet.tipGrainsDesc': '选择糙米、燕麦和全麦面包代替精制谷物。',
+    'diet.tipProtein': '优质蛋白质', 'diet.tipProteinDesc': '在饮食中加入鱼、鸡肉、豆类或豆腐。',
+    'diet.tipDairy': '富含钙质', 'diet.tipDairyDesc': '牛奶、酸奶和奶酪有助于骨骼健康。',
+    'diet.tipSugar': '少吃糖', 'diet.tipSugarDesc': '减少含糖饮料和零食，改吃新鲜水果。',
+    'diet.breakfast': '早餐', 'diet.breakfastItems': '豆浆油条、小笼包、粥配咸菜，或鸡蛋饼',
+    'diet.lunch': '午餐', 'diet.lunchItems': '红烧肉配米饭、牛肉面、或蔬菜炒饭',
+    'diet.dinner': '晚餐', 'diet.dinnerItems': '清蒸鱼配时蔬、番茄蛋花汤、或饺子',
+    'diet.snacks': '零食', 'diet.snackItems': '坚果、水果、红豆糕、或酸奶',
+    'diet.disclaimer': '以上信息仅供一般健康参考。请务必咨询您的医生或营养师获取个性化饮食建议。',
+    'diet.aiCardTitle': 'Compass AI', 'diet.aiCardDesc': '有什么都可以问我！',
+    'diet.aiTitle': 'Compass AI', 'diet.aiSubtitle': '您的AI助手',
+    'diet.chatEmpty': '什么都可以问我 — 健康、科技、日常生活、菜谱等等！',
+    'diet.aiTyping': '思考中...', 'diet.inputPlaceholder': '有什么想问的...',
+    'diet.aiError': '抱歉，无法获取回复。请重试。',
+    'diet.q1': '早餐应该吃什么？', 'diet.q2': '怎么省钱又吃得健康？', 'diet.q3': '吃什么能提高精力？',
+    'diet.q4': '适合老年人的零食推荐？', 'diet.q5': '帮我规划今天的安排', 'diet.q6': '这个应用怎么用？',
+    'ai.title': 'Compass AI', 'ai.subtitle': '您的AI助手',
+    'ai.tabChat': '聊天', 'ai.tabDiet': '营养', 'ai.tabRecipes': '菜谱',
+    'ai.chatWelcome': '你好！我是Compass AI \u{1F9ED}',
+    'ai.chatDesc': '什么都可以问我 — 健康、科技、日常生活、菜谱，或者聊聊天！',
+    'ai.inputPlaceholder': '有什么想问的...',
+    'ai.topicDiet': '营养', 'ai.topicExercise': '运动', 'ai.topicHealth': '健康',
+    'ai.topicTech': '科技帮助', 'ai.topicChat': '聊天', 'ai.topicGames': '游戏攻略',
+    'ai.promptDiet': '今天吃什么比较健康？',
+    'ai.promptExercise': '在家可以做哪些简单的运动？',
+    'ai.promptHealth': '怎么改善睡眠质量？',
+    'ai.promptTech': '怎么用手机发照片给别人？',
+    'ai.promptChat': '讲讲今天历史上发生了什么有趣的事',
+    'ai.promptGames': '下棋有什么技巧？',
+    'ai.voiceThinking': '让我想想...',
+    'recipes.title': '精选菜谱', 'recipes.subtitle': '美味佳肴，温暖人心',
+    'recipes.featured': '今日推荐',
+    'recipes.recipe1.name': '红烧排骨', 'recipes.recipe1.time': '60分钟',
+    'recipes.recipe1.desc': '色泽红亮、肉质酥烂的经典家常菜，配上米饭绝了。',
+    'recipes.recipe2.name': '葱油拌面', 'recipes.recipe2.time': '15分钟',
+    'recipes.recipe2.desc': '简单又美味，浓郁的葱油香气让人食欲大开。',
+    'recipes.recipe3.name': '麻婆豆腐', 'recipes.recipe3.time': '20分钟',
+    'recipes.recipe3.desc': '麻辣鲜香的经典川菜，嫩滑的豆腐配上肉末，超下饭。',
+    'recipes.recipe4.name': '蛋挞', 'recipes.recipe4.time': '45分钟',
+    'recipes.recipe4.desc': '酥脆的外皮包裹着丝滑的蛋奶馅，甜而不腻。',
+    'recipes.askAI': '向Compass AI询问详细食谱和做法步骤！',
   },
 
   'zh-TW': {
@@ -706,6 +919,53 @@ export const translations: Translations = {
     'emergency.title': 'Contactos de Emergencia', 'emergency.subtitle': 'Personas que serán alertadas en un SOS', 'emergency.noContacts': 'Sin Contactos', 'emergency.noContactsDesc': 'Agrega contactos que recibirán tu ubicación en una emergencia.', 'emergency.addFirst': 'Agregar Primer Contacto', 'emergency.primary': 'Principal', 'emergency.newContact': 'Nuevo Contacto', 'emergency.editContact': 'Editar Contacto', 'emergency.fullName': 'Nombre Completo *', 'emergency.namePlaceholder': 'Nombre del contacto', 'emergency.phone': 'Teléfono *', 'emergency.phonePlaceholder': '+1 (555) 000-0000', 'emergency.emailLabel': 'Correo', 'emergency.emailPlaceholder': 'email@ejemplo.com', 'emergency.relationship': 'Relación', 'emergency.family': 'Familia', 'emergency.spouse': 'Cónyuge', 'emergency.parent': 'Padre/Madre', 'emergency.sibling': 'Hermano/a', 'emergency.friend': 'Amigo/a', 'emergency.caregiver': 'Cuidador/a', 'emergency.doctor': 'Doctor/a', 'emergency.other': 'Otro', 'emergency.namePhoneRequired': 'Nombre y teléfono son requeridos.', 'emergency.removeContact': 'Eliminar Contacto', 'emergency.removeConfirm': '¿Eliminar de contactos de emergencia?', 'emergency.infoText': 'En una emergencia SOS, todos los contactos recibirán un SMS y email con tu ubicación GPS.',
     'help.title': 'Cómo Usar BridgeApp', 'help.subtitle': 'Instrucciones simples paso a paso', 'help.readAll': 'Leer Todas las Instrucciones', 'help.stopReading': 'Dejar de Leer', 'help.quickTips': 'Consejos Rápidos', 'help.tip1': 'La barra inferior te permite cambiar entre secciones.', 'help.tip2': 'Tus datos se guardan automáticamente.', 'help.tip3': 'Usa el botón del micrófono para navegación manos libres.', 'help.tip4': 'Si algo falla, cierra y reabre la app.', 'help.sectionProfile': 'Tu Perfil', 'help.sectionSOS': 'SOS de Emergencia', 'help.sectionSchedule': 'Horario y Recordatorios', 'help.sectionChat': 'Chat y Mensajes', 'help.sectionGames': 'Juegos', 'help.sectionVoice': 'Comandos de Voz', 'help.sectionAccount': 'Cuenta e Inicio de Sesión',
     'voice.title': 'Comandos de Voz', 'voice.listening': 'Escuchando...', 'voice.sendingSOS': 'Enviando SOS...', 'voice.tapToListen': 'Toca para Escuchar', 'voice.trySaying': 'Intenta decir:', 'voice.contactingContacts': 'Contactando a tus contactos de emergencia...', 'voice.notUnderstood': 'No entendí. Inténtalo de nuevo.', 'voice.micDenied': 'Acceso al micrófono denegado.', 'voice.webOnly': '¡Los comandos de voz funcionan mejor en el navegador web!',
+    'tabs.diet': 'Compass',
+    'diet.title': 'Dieta y Bienestar', 'diet.subtitle': 'Consejos de alimentación saludable',
+    'diet.dailyTips': 'Consejos Diarios', 'diet.sampleMeals': 'Ideas de Comidas',
+    'diet.tipWater': 'Hidratación', 'diet.tipWaterDesc': 'Bebe 6-8 vasos de agua al día.',
+    'diet.tipFruits': 'Más Frutas', 'diet.tipFruitsDesc': 'Come 2-3 porciones de frutas al día.',
+    'diet.tipGrains': 'Granos Integrales', 'diet.tipGrainsDesc': 'Elige arroz integral y pan integral.',
+    'diet.tipProtein': 'Proteína Magra', 'diet.tipProteinDesc': 'Incluye pescado, pollo, frijoles o tofu.',
+    'diet.tipDairy': 'Rico en Calcio', 'diet.tipDairyDesc': 'Leche, yogur y queso fortalecen los huesos.',
+    'diet.tipSugar': 'Menos Azúcar', 'diet.tipSugarDesc': 'Reduce bebidas y snacks azucarados.',
+    'diet.breakfast': 'Desayuno', 'diet.breakfastItems': 'Churros con chocolate, tostada con tomate, o huevos revueltos',
+    'diet.lunch': 'Almuerzo', 'diet.lunchItems': 'Paella, ensalada mixta con pollo, o gazpacho',
+    'diet.dinner': 'Cena', 'diet.dinnerItems': 'Tortilla española, pescado a la plancha, o sopa de verduras',
+    'diet.snacks': 'Merienda', 'diet.snackItems': 'Frutos secos, fruta fresca, aceitunas, o yogur',
+    'diet.disclaimer': 'Esta información es solo orientativa. Consulte siempre a su médico.',
+    'diet.aiCardTitle': 'Compass AI', 'diet.aiCardDesc': '¡Pregúntame lo que quieras!',
+    'diet.aiTitle': 'Compass AI', 'diet.aiSubtitle': 'Tu asistente de IA',
+    'diet.chatEmpty': '¡Pregúntame lo que quieras — salud, tecnología, vida diaria o recetas!',
+    'diet.aiTyping': 'Pensando...', 'diet.inputPlaceholder': 'Pregúntame lo que sea...',
+    'diet.aiError': 'Lo siento, no pude obtener una respuesta. Inténtalo de nuevo.',
+    'diet.q1': '¿Qué debería desayunar?', 'diet.q2': '¿Cómo comer sano con poco dinero?',
+    'diet.q3': '¿Qué alimentos dan energía?', 'diet.q4': '¿Mejores snacks para mayores?',
+    'diet.q5': 'Ayúdame a planificar mi día', 'diet.q6': '¿Cómo uso esta app?',
+    'ai.title': 'Compass AI', 'ai.subtitle': 'Tu asistente de IA',
+    'ai.tabChat': 'Chat', 'ai.tabDiet': 'Nutrición', 'ai.tabRecipes': 'Recetas',
+    'ai.chatWelcome': '¡Hola! Soy Compass AI \u{1F9ED}',
+    'ai.chatDesc': '¡Pregúntame sobre cualquier cosa — salud, tecnología, vida diaria, recetas o simplemente charlar!',
+    'ai.inputPlaceholder': 'Pregúntame lo que sea...',
+    'ai.topicDiet': 'Nutrición', 'ai.topicExercise': 'Ejercicio', 'ai.topicHealth': 'Salud',
+    'ai.topicTech': 'Tecnología', 'ai.topicChat': 'Charlar', 'ai.topicGames': 'Juegos',
+    'ai.promptDiet': '¿Qué debería comer hoy?',
+    'ai.promptExercise': '¿Qué ejercicios suaves puedo hacer en casa?',
+    'ai.promptHealth': '¿Cómo puedo dormir mejor?',
+    'ai.promptTech': '¿Cómo envío una foto por el teléfono?',
+    'ai.promptChat': 'Cuéntame algo interesante de la historia de hoy',
+    'ai.promptGames': '¿Consejos para ganar al ajedrez?',
+    'ai.voiceThinking': 'Déjame pensar...',
+    'recipes.title': 'Recetas Destacadas', 'recipes.subtitle': 'Platos deliciosos para alegrar tu día',
+    'recipes.featured': 'Selección del Día',
+    'recipes.recipe1.name': 'Paella Valenciana', 'recipes.recipe1.time': '60 min',
+    'recipes.recipe1.desc': 'El clásico arroz español con mariscos, pollo y azafrán.',
+    'recipes.recipe2.name': 'Tortilla Española', 'recipes.recipe2.time': '30 min',
+    'recipes.recipe2.desc': 'Jugosa tortilla de patatas, perfecta para cualquier comida.',
+    'recipes.recipe3.name': 'Gazpacho Andaluz', 'recipes.recipe3.time': '15 min',
+    'recipes.recipe3.desc': 'Sopa fría de tomate refrescante, ideal para el verano.',
+    'recipes.recipe4.name': 'Churros con Chocolate', 'recipes.recipe4.time': '25 min',
+    'recipes.recipe4.desc': 'Crujientes churros servidos con chocolate caliente espeso.',
+    'recipes.askAI': '¡Pide a Compass AI la receta completa paso a paso!',
   },
 
   // Remaining languages use English as base with key translations
@@ -730,6 +990,53 @@ const langFills: Record<string, Partial<TranslationKeys>> = {
     'emergency.title': "Contacts d'Urgence", 'emergency.family': 'Famille', 'emergency.spouse': 'Conjoint(e)', 'emergency.parent': 'Parent', 'emergency.friend': 'Ami(e)', 'emergency.doctor': 'Médecin',
     'help.title': 'Comment Utiliser BridgeApp', 'help.subtitle': 'Instructions simples étape par étape', 'help.readAll': 'Lire Toutes les Instructions', 'help.stopReading': 'Arrêter', 'help.quickTips': 'Conseils Rapides',
     'voice.title': 'Commandes Vocales', 'voice.listening': 'Écoute...', 'voice.tapToListen': 'Appuyez pour Écouter', 'voice.trySaying': 'Essayez de dire :',
+    'tabs.diet': 'Compass',
+    'diet.title': 'Alimentation & Bien-être', 'diet.subtitle': 'Conseils nutritionnels et assistance IA',
+    'diet.dailyTips': 'Conseils Quotidiens', 'diet.sampleMeals': 'Idées de Repas',
+    'diet.tipWater': 'Hydratation', 'diet.tipWaterDesc': 'Buvez 6 à 8 verres d\'eau par jour.',
+    'diet.tipFruits': 'Plus de Fruits', 'diet.tipFruitsDesc': 'Mangez 2 à 3 portions de fruits par jour.',
+    'diet.tipGrains': 'Céréales Complètes', 'diet.tipGrainsDesc': 'Préférez le riz complet et le pain complet.',
+    'diet.tipProtein': 'Protéines Maigres', 'diet.tipProteinDesc': 'Incluez poisson, poulet, légumineuses ou tofu.',
+    'diet.tipDairy': 'Riche en Calcium', 'diet.tipDairyDesc': 'Lait, yaourt et fromage renforcent les os.',
+    'diet.tipSugar': 'Moins de Sucre', 'diet.tipSugarDesc': 'Réduisez boissons et snacks sucrés.',
+    'diet.breakfast': 'Petit-déjeuner', 'diet.breakfastItems': 'Croissant, café au lait, yaourt aux fruits, ou tartines de confiture',
+    'diet.lunch': 'Déjeuner', 'diet.lunchItems': 'Quiche lorraine, salade niçoise, ou croque-monsieur',
+    'diet.dinner': 'Dîner', 'diet.dinnerItems': 'Ratatouille, poulet rôti aux légumes, ou soupe à l\'oignon',
+    'diet.snacks': 'Goûter', 'diet.snackItems': 'Fromage, fruits, madeleines, ou noix',
+    'diet.disclaimer': 'Ces informations sont à titre indicatif. Consultez toujours votre médecin.',
+    'diet.aiCardTitle': 'Compass AI', 'diet.aiCardDesc': 'Demandez-moi n\'importe quoi !',
+    'diet.aiTitle': 'Compass AI', 'diet.aiSubtitle': 'Votre assistant IA',
+    'diet.chatEmpty': 'Demandez-moi n\'importe quoi — santé, technologie, vie quotidienne ou recettes !',
+    'diet.aiTyping': 'Réflexion...', 'diet.inputPlaceholder': 'Demandez-moi n\'importe quoi...',
+    'diet.aiError': 'Désolé, je n\'ai pas pu obtenir de réponse. Réessayez.',
+    'diet.q1': 'Que devrais-je manger au petit-déjeuner ?', 'diet.q2': 'Comment manger sainement à petit budget ?',
+    'diet.q3': 'Quels aliments donnent de l\'énergie ?', 'diet.q4': 'Meilleurs encas pour les seniors ?',
+    'diet.q5': 'Aidez-moi à planifier ma journée', 'diet.q6': 'Comment utiliser cette application ?',
+    'ai.title': 'Compass AI', 'ai.subtitle': 'Votre assistant IA',
+    'ai.tabChat': 'Discussion', 'ai.tabDiet': 'Nutrition', 'ai.tabRecipes': 'Recettes',
+    'ai.chatWelcome': 'Bonjour ! Je suis Compass AI \u{1F9ED}',
+    'ai.chatDesc': 'Demandez-moi n\'importe quoi — santé, technologie, vie quotidienne, recettes ou bavardage !',
+    'ai.inputPlaceholder': 'Demandez-moi n\'importe quoi...',
+    'ai.topicDiet': 'Nutrition', 'ai.topicExercise': 'Exercice', 'ai.topicHealth': 'Santé',
+    'ai.topicTech': 'Tech', 'ai.topicChat': 'Discuter', 'ai.topicGames': 'Jeux',
+    'ai.promptDiet': 'Que devrais-je manger aujourd\'hui ?',
+    'ai.promptExercise': 'Quels exercices doux puis-je faire à la maison ?',
+    'ai.promptHealth': 'Comment améliorer mon sommeil ?',
+    'ai.promptTech': 'Comment envoyer une photo avec mon téléphone ?',
+    'ai.promptChat': 'Racontez-moi quelque chose d\'intéressant de l\'histoire d\'aujourd\'hui',
+    'ai.promptGames': 'Des conseils pour gagner aux échecs ?',
+    'ai.voiceThinking': 'Laissez-moi réfléchir...',
+    'recipes.title': 'Recettes en Vedette', 'recipes.subtitle': 'Des plats délicieux pour égayer votre journée',
+    'recipes.featured': 'Sélection du Jour',
+    'recipes.recipe1.name': 'Coq au Vin', 'recipes.recipe1.time': '90 min',
+    'recipes.recipe1.desc': 'Le classique français : poulet braisé au vin rouge avec champignons.',
+    'recipes.recipe2.name': 'Crêpes Suzette', 'recipes.recipe2.time': '25 min',
+    'recipes.recipe2.desc': 'Fines crêpes flambées au Grand Marnier avec beurre d\'orange.',
+    'recipes.recipe3.name': 'Ratatouille Provençale', 'recipes.recipe3.time': '45 min',
+    'recipes.recipe3.desc': 'Légumes du soleil mijotés lentement aux herbes de Provence.',
+    'recipes.recipe4.name': 'Tarte Tatin', 'recipes.recipe4.time': '50 min',
+    'recipes.recipe4.desc': 'Tarte aux pommes caramélisées renversée, un dessert emblématique.',
+    'recipes.askAI': 'Demandez à Compass AI la recette complète étape par étape !',
   },
   de: {
     'common.save': 'Speichern', 'common.cancel': 'Abbrechen', 'common.delete': 'Löschen', 'common.edit': 'Bearbeiten', 'common.close': 'Schließen', 'common.ok': 'OK', 'common.back': 'Zurück', 'common.search': 'Suchen', 'common.loading': 'Laden...', 'common.error': 'Fehler', 'common.success': 'Erfolg', 'common.required': 'Erforderlich', 'common.comingSoon': 'Demnächst',
@@ -742,6 +1049,53 @@ const langFills: Record<string, Partial<TranslationKeys>> = {
     'profile.title': 'Mein Profil', 'profile.fullName': 'Vollständiger Name', 'profile.age': 'Alter', 'profile.bio': 'Bio', 'profile.senior': 'Senior', 'profile.youth': 'Jugendliche/r', 'profile.saveProfile': 'Profil Speichern', 'profile.language': 'Sprache', 'profile.languageSub': 'App-Sprache ändern', 'profile.logOut': 'Abmelden',
     'help.title': 'So verwenden Sie BridgeApp', 'help.readAll': 'Alle Anweisungen vorlesen', 'help.quickTips': 'Schnelle Tipps',
     'voice.title': 'Sprachbefehle', 'voice.listening': 'Höre zu...', 'voice.tapToListen': 'Tippen zum Hören', 'voice.trySaying': 'Versuchen Sie:',
+    'tabs.diet': 'Compass',
+    'diet.title': 'Ernährung & Wohlbefinden', 'diet.subtitle': 'Gesunde Ernährungstipps und KI-Beratung',
+    'diet.dailyTips': 'Tägliche Tipps', 'diet.sampleMeals': 'Mahlzeitenideen',
+    'diet.tipWater': 'Hydratation', 'diet.tipWaterDesc': 'Trinken Sie 6-8 Gläser Wasser täglich.',
+    'diet.tipFruits': 'Mehr Obst', 'diet.tipFruitsDesc': 'Essen Sie 2-3 Portionen Obst täglich.',
+    'diet.tipGrains': 'Vollkornprodukte', 'diet.tipGrainsDesc': 'Wählen Sie Vollkornreis und Vollkornbrot.',
+    'diet.tipProtein': 'Mageres Eiweiß', 'diet.tipProteinDesc': 'Fisch, Hähnchen, Hülsenfrüchte oder Tofu einbeziehen.',
+    'diet.tipDairy': 'Kalziumreich', 'diet.tipDairyDesc': 'Milch, Joghurt und Käse stärken die Knochen.',
+    'diet.tipSugar': 'Weniger Zucker', 'diet.tipSugarDesc': 'Reduzieren Sie zuckerhaltige Getränke und Snacks.',
+    'diet.breakfast': 'Frühstück', 'diet.breakfastItems': 'Brötchen mit Aufschnitt, Müsli mit Obst, oder Rührei',
+    'diet.lunch': 'Mittagessen', 'diet.lunchItems': 'Schnitzel mit Kartoffelsalat, Suppe, oder Bratwurst mit Sauerkraut',
+    'diet.dinner': 'Abendessen', 'diet.dinnerItems': 'Sauerbraten, Fischfilet mit Gemüse, oder Kartoffelsuppe',
+    'diet.snacks': 'Snacks', 'diet.snackItems': 'Nüsse, Obst, Brezel, oder Quark',
+    'diet.disclaimer': 'Diese Informationen dienen nur der allgemeinen Gesundheit. Bitte fragen Sie Ihren Arzt.',
+    'diet.aiCardTitle': 'Compass AI', 'diet.aiCardDesc': 'Fragen Sie mich alles!',
+    'diet.aiTitle': 'Compass AI', 'diet.aiSubtitle': 'Ihr KI-Assistent',
+    'diet.chatEmpty': 'Fragen Sie mich alles — Gesundheit, Technik, Alltag oder Rezepte!',
+    'diet.aiTyping': 'Denke nach...', 'diet.inputPlaceholder': 'Fragen Sie mich alles...',
+    'diet.aiError': 'Entschuldigung, keine Antwort erhalten. Bitte versuchen Sie es erneut.',
+    'diet.q1': 'Was sollte ich zum Frühstück essen?', 'diet.q2': 'Wie esse ich gesund und günstig?',
+    'diet.q3': 'Welche Lebensmittel geben Energie?', 'diet.q4': 'Beste Snacks für Senioren?',
+    'diet.q5': 'Hilf mir meinen Tag zu planen', 'diet.q6': 'Wie benutze ich diese App?',
+    'ai.title': 'Compass AI', 'ai.subtitle': 'Ihr KI-Assistent',
+    'ai.tabChat': 'Chat', 'ai.tabDiet': 'Ernährung', 'ai.tabRecipes': 'Rezepte',
+    'ai.chatWelcome': 'Hallo! Ich bin Compass AI \u{1F9ED}',
+    'ai.chatDesc': 'Fragen Sie mich alles — Gesundheit, Technik, Alltag, Rezepte oder einfach plaudern!',
+    'ai.inputPlaceholder': 'Fragen Sie mich alles...',
+    'ai.topicDiet': 'Ernährung', 'ai.topicExercise': 'Bewegung', 'ai.topicHealth': 'Gesundheit',
+    'ai.topicTech': 'Technik', 'ai.topicChat': 'Plaudern', 'ai.topicGames': 'Spieltipps',
+    'ai.promptDiet': 'Was sollte ich heute essen?',
+    'ai.promptExercise': 'Welche leichten Übungen kann ich zuhause machen?',
+    'ai.promptHealth': 'Wie kann ich besser schlafen?',
+    'ai.promptTech': 'Wie sende ich ein Foto mit meinem Handy?',
+    'ai.promptChat': 'Erzählen Sie mir etwas Interessantes aus der Geschichte',
+    'ai.promptGames': 'Tipps zum Schachspielen?',
+    'ai.voiceThinking': 'Lass mich nachdenken...',
+    'recipes.title': 'Empfohlene Rezepte', 'recipes.subtitle': 'Köstliche Gerichte für gute Laune',
+    'recipes.featured': 'Auswahl des Tages',
+    'recipes.recipe1.name': 'Wiener Schnitzel', 'recipes.recipe1.time': '30 Min',
+    'recipes.recipe1.desc': 'Knuspriges paniertes Kalbsschnitzel mit Zitrone und Kartoffelsalat.',
+    'recipes.recipe2.name': 'Apfelstrudel', 'recipes.recipe2.time': '60 Min',
+    'recipes.recipe2.desc': 'Blättriger Strudel gefüllt mit zimtigen Äpfeln und Rosinen.',
+    'recipes.recipe3.name': 'Käsespätzle', 'recipes.recipe3.time': '35 Min',
+    'recipes.recipe3.desc': 'Herzhafte schwäbische Spätzle überbacken mit würzigem Käse.',
+    'recipes.recipe4.name': 'Schwarzwälder Kirschtorte', 'recipes.recipe4.time': '90 Min',
+    'recipes.recipe4.desc': 'Schokoladentorte mit Kirschen, Sahne und einem Hauch Kirschwasser.',
+    'recipes.askAI': 'Fragen Sie Compass AI nach dem vollständigen Rezept mit Schritt-für-Schritt-Anleitung!',
   },
   ja: {
     'common.save': '保存', 'common.cancel': 'キャンセル', 'common.delete': '削除', 'common.edit': '編集', 'common.close': '閉じる', 'common.ok': 'OK', 'common.back': '戻る', 'common.search': '検索', 'common.loading': '読み込み中...', 'common.error': 'エラー', 'common.success': '成功', 'common.required': '必須', 'common.comingSoon': '近日公開',
@@ -754,6 +1108,83 @@ const langFills: Record<string, Partial<TranslationKeys>> = {
     'profile.title': 'マイプロフィール', 'profile.fullName': '氏名', 'profile.age': '年齢', 'profile.bio': '自己紹介', 'profile.senior': 'シニア', 'profile.youth': '若者', 'profile.saveProfile': 'プロフィール保存', 'profile.language': '言語', 'profile.languageSub': 'アプリの言語を変更', 'profile.logOut': 'ログアウト',
     'help.title': 'BridgeAppの使い方', 'help.readAll': 'すべて読み上げる', 'help.quickTips': 'クイックヒント',
     'voice.title': '音声コマンド', 'voice.listening': '聞いています...', 'voice.tapToListen': 'タップして聞く', 'voice.trySaying': '次のように言ってみてください：',
+    'tabs.diet': 'コンパス',
+    'diet.title': '食事と健康',
+    'diet.subtitle': '健康的な食事のヒントとAIアドバイス',
+    'diet.dailyTips': '毎日の栄養ヒント',
+    'diet.sampleMeals': '食事メニュー例',
+    'diet.tipWater': '水分補給',
+    'diet.tipWaterDesc': '毎日6〜8杯の水を飲みましょう。レモンやフルーツで風味を加えて。',
+    'diet.tipFruits': '果物を食べよう',
+    'diet.tipFruitsDesc': '毎日2〜3種類のカラフルな果物を食べましょう。',
+    'diet.tipGrains': '全粒穀物',
+    'diet.tipGrainsDesc': '白米より玄米、オートミール、全粒粉パンを選びましょう。',
+    'diet.tipProtein': '良質なタンパク質',
+    'diet.tipProteinDesc': '魚、鶏肉、豆類、豆腐を食事に取り入れましょう。',
+    'diet.tipDairy': 'カルシウム豊富',
+    'diet.tipDairyDesc': '牛乳、ヨーグルト、チーズで骨を丈夫に。',
+    'diet.tipSugar': '砂糖を控えめに',
+    'diet.tipSugarDesc': '甘い飲み物やお菓子を減らし、新鮮な果物を代わりに。',
+    'diet.breakfast': '朝食',
+    'diet.breakfastItems': '味噌汁と焼き魚、納豆ご飯、またはオートミールとフルーツ',
+    'diet.lunch': '昼食',
+    'diet.lunchItems': '親子丼、野菜たっぷりうどん、または鮭弁当',
+    'diet.dinner': '夕食',
+    'diet.dinnerItems': '焼き魚と煮物、鍋料理、またはカレーライス',
+    'diet.snacks': 'おやつ',
+    'diet.snackItems': 'おにぎり、枝豆、和菓子、フルーツ',
+    'diet.disclaimer': 'この情報は一般的な健康のためのものです。個別の食事アドバイスは必ず医師や栄養士にご相談ください。',
+    'diet.aiCardTitle': 'Compass AI',
+    'diet.aiCardDesc': '何でも聞いてください！',
+    'diet.aiTitle': 'Compass AI',
+    'diet.aiSubtitle': 'あなたのAIアシスタント',
+    'diet.chatEmpty': '何でも聞いてください — 健康、テクノロジー、日常生活、レシピなど！',
+    'diet.aiTyping': '考え中...',
+    'diet.inputPlaceholder': '何でも聞いてください...',
+    'diet.aiError': '申し訳ございません、応答を取得できませんでした。もう一度お試しください。',
+    'diet.q1': '朝食には何を食べればいいですか？',
+    'diet.q2': '節約しながら健康に食べるには？',
+    'diet.q3': 'エネルギーが出る食べ物は？',
+    'diet.q4': 'シニアにおすすめのおやつは？',
+    'diet.q5': '一日の計画を手伝ってください',
+    'diet.q6': 'このアプリの使い方を教えて',
+    'ai.title': 'Compass AI',
+    'ai.subtitle': 'あなたのAIアシスタント',
+    'ai.tabChat': 'チャット',
+    'ai.tabDiet': '栄養',
+    'ai.tabRecipes': 'レシピ',
+    'ai.chatWelcome': 'こんにちは！Compass AIです \u{1F9ED}',
+    'ai.chatDesc': '何でも聞いてください — 健康、テクノロジー、日常生活、レシピなど！',
+    'ai.inputPlaceholder': '何でも聞いてください...',
+    'ai.topicDiet': '栄養',
+    'ai.topicExercise': '運動',
+    'ai.topicHealth': '健康',
+    'ai.topicTech': 'テクノロジー',
+    'ai.topicChat': 'おしゃべり',
+    'ai.topicGames': 'ゲーム攻略',
+    'ai.promptDiet': '今日のバランスの良い食事は何がいいですか？',
+    'ai.promptExercise': '家でできる簡単な運動を教えてください',
+    'ai.promptHealth': '睡眠の質を上げるにはどうすればいいですか？',
+    'ai.promptTech': 'スマホで写真を送る方法を教えてください',
+    'ai.promptChat': '今日の歴史的な出来事を教えてください',
+    'ai.promptGames': 'チェスで勝つコツを教えてください',
+    'ai.voiceThinking': '考えています...',
+    'recipes.title': 'おすすめレシピ',
+    'recipes.subtitle': '笑顔になれる美味しい料理',
+    'recipes.featured': '今日のおすすめ',
+    'recipes.recipe1.name': '肉じゃが',
+    'recipes.recipe1.time': '40分',
+    'recipes.recipe1.desc': '家庭の味、ホクホクのじゃがいもと甘辛い肉の煮込み料理。',
+    'recipes.recipe2.name': 'ふわふわパンケーキ',
+    'recipes.recipe2.time': '20分',
+    'recipes.recipe2.desc': 'ふわっと軽いパンケーキにフルーツとメープルシロップを添えて。',
+    'recipes.recipe3.name': '鮭のバター醤油焼き',
+    'recipes.recipe3.time': '15分',
+    'recipes.recipe3.desc': '香ばしいバター醤油で焼いた鮭。ご飯によく合います。',
+    'recipes.recipe4.name': '抹茶ティラミス',
+    'recipes.recipe4.time': '30分',
+    'recipes.recipe4.desc': 'ほろ苦い抹茶とクリーミーなマスカルポーネの和洋折衷デザート。',
+    'recipes.askAI': 'Compass AIに詳しいレシピと作り方を聞いてみましょう！',
   },
   ko: {
     'common.save': '저장', 'common.cancel': '취소', 'common.delete': '삭제', 'common.edit': '편집', 'common.close': '닫기', 'common.ok': '확인', 'common.back': '뒤로', 'common.search': '검색', 'common.loading': '로딩 중...', 'common.error': '오류', 'common.success': '성공', 'common.required': '필수', 'common.comingSoon': '곧 출시',
@@ -765,6 +1196,50 @@ const langFills: Record<string, Partial<TranslationKeys>> = {
     'sos.title': '긴급 SOS', 'sos.buttonText': 'SOS', 'sos.sending': '전송 중...', 'sos.sent': '전송됨', 'sos.emergencyServices': '응급 서비스',
     'profile.title': '내 프로필', 'profile.fullName': '이름', 'profile.age': '나이', 'profile.bio': '소개', 'profile.senior': '어르신', 'profile.youth': '청소년', 'profile.language': '언어', 'profile.languageSub': '앱 언어 변경', 'profile.logOut': '로그아웃',
     'help.title': 'BridgeApp 사용법', 'voice.title': '음성 명령', 'voice.listening': '듣고 있습니다...', 'voice.tapToListen': '탭하여 듣기', 'voice.trySaying': '다음과 같이 말해보세요:',
+    'tabs.diet': '컴파스',
+    'diet.title': '식단 & 건강', 'diet.subtitle': '건강한 식습관 팁과 AI 영양 상담',
+    'diet.dailyTips': '매일 영양 팁', 'diet.sampleMeals': '식단 아이디어',
+    'diet.tipWater': '수분 보충', 'diet.tipWaterDesc': '매일 6-8잔의 물을 마시세요.',
+    'diet.tipFruits': '과일 섭취', 'diet.tipFruitsDesc': '매일 2-3가지 과일을 드세요.',
+    'diet.tipGrains': '통곡물', 'diet.tipGrainsDesc': '현미, 귀리, 통밀빵을 선택하세요.',
+    'diet.tipProtein': '양질의 단백질', 'diet.tipProteinDesc': '생선, 닭고기, 콩, 두부를 포함하세요.',
+    'diet.tipDairy': '칼슘 섭취', 'diet.tipDairyDesc': '우유, 요거트, 치즈로 뼈를 튼튼하게.',
+    'diet.tipSugar': '설탕 줄이기', 'diet.tipSugarDesc': '단 음료와 간식을 줄이세요.',
+    'diet.breakfast': '아침', 'diet.breakfastItems': '된장찌개와 밥, 계란말이, 또는 죽',
+    'diet.lunch': '점심', 'diet.lunchItems': '비빔밥, 김치찌개, 또는 잡채밥',
+    'diet.dinner': '저녁', 'diet.dinnerItems': '불고기, 생선구이와 나물, 또는 칼국수',
+    'diet.snacks': '간식', 'diet.snackItems': '떡, 과일, 견과류, 또는 고구마',
+    'diet.disclaimer': '이 정보는 일반적인 건강 목적입니다. 개인 식이 조언은 의사와 상담하세요.',
+    'diet.aiCardTitle': 'Compass AI', 'diet.aiCardDesc': '무엇이든 물어보세요!',
+    'diet.aiTitle': 'Compass AI', 'diet.aiSubtitle': '당신의 AI 도우미',
+    'diet.chatEmpty': '무엇이든 물어보세요 — 건강, 기술, 일상, 레시피 등!',
+    'diet.aiTyping': '생각 중...', 'diet.inputPlaceholder': '무엇이든 물어보세요...',
+    'diet.aiError': '죄송합니다, 응답을 받지 못했습니다. 다시 시도해주세요.',
+    'ai.title': 'Compass AI', 'ai.subtitle': '당신의 AI 도우미',
+    'ai.tabChat': '채팅', 'ai.tabDiet': '영양', 'ai.tabRecipes': '레시피',
+    'ai.chatWelcome': '안녕하세요! Compass AI입니다 \u{1F9ED}',
+    'ai.chatDesc': '무엇이든 물어보세요 — 건강, 기술, 일상, 레시피, 또는 그냥 대화해요!',
+    'ai.inputPlaceholder': '무엇이든 물어보세요...',
+    'ai.topicDiet': '영양', 'ai.topicExercise': '운동', 'ai.topicHealth': '건강',
+    'ai.topicTech': '기술 도움', 'ai.topicChat': '대화', 'ai.topicGames': '게임 팁',
+    'ai.promptDiet': '오늘 무엇을 먹으면 좋을까요?',
+    'ai.promptExercise': '집에서 할 수 있는 가벼운 운동은?',
+    'ai.promptHealth': '수면의 질을 높이려면?',
+    'ai.promptTech': '핸드폰으로 사진 보내는 방법은?',
+    'ai.promptChat': '오늘 역사에서 일어난 재미있는 일을 알려주세요',
+    'ai.promptGames': '체스에서 이기는 팁이 있나요?',
+    'ai.voiceThinking': '생각하고 있어요...',
+    'recipes.title': '추천 레시피', 'recipes.subtitle': '행복을 가져다 주는 맛있는 요리',
+    'recipes.featured': '오늘의 추천',
+    'recipes.recipe1.name': '소고기 불고기', 'recipes.recipe1.time': '30분',
+    'recipes.recipe1.desc': '달콤짭짤한 양념에 재운 소고기를 구워낸 한국의 대표 요리.',
+    'recipes.recipe2.name': '김치전', 'recipes.recipe2.time': '20분',
+    'recipes.recipe2.desc': '바삭하게 구운 김치전, 막걸리와 함께 즐기면 최고.',
+    'recipes.recipe3.name': '떡볶이', 'recipes.recipe3.time': '25분',
+    'recipes.recipe3.desc': '쫄깃한 떡에 매콤달콤한 고추장 소스, 한국의 국민 간식.',
+    'recipes.recipe4.name': '호떡', 'recipes.recipe4.time': '30분',
+    'recipes.recipe4.desc': '따끈한 흑설탕 속이 가득한 바삭한 호떡, 겨울 간식의 왕.',
+    'recipes.askAI': 'Compass AI에게 자세한 레시피와 만드는 법을 물어보세요!',
   },
   hi: {
     'common.save': 'सहेजें', 'common.cancel': 'रद्द करें', 'common.delete': 'हटाएं', 'common.edit': 'संपादित करें', 'common.close': 'बंद करें', 'common.ok': 'ठीक', 'common.back': 'वापस', 'common.search': 'खोजें', 'common.loading': 'लोड हो रहा है...', 'common.error': 'त्रुटि', 'common.success': 'सफल', 'common.required': 'आवश्यक', 'common.comingSoon': 'जल्द आ रहा है',

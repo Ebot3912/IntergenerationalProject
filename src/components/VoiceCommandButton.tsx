@@ -11,6 +11,10 @@ import { triggerSOS } from '../utils/sendSOS';
 import { SUPPORTED_LANGUAGES } from '../utils/i18n';
 import { Colors, FontSizes, Spacing, BorderRadius, Shadow } from '../utils/theme';
 
+const API_BASE = __DEV__
+  ? 'http://localhost:3000'
+  : 'https://bridgeapp-sos.vercel.app';
+
 interface VoiceCommandButtonProps {
   onNavigate: (screen: string) => void;
 }
@@ -23,23 +27,6 @@ interface Language {
   speechCode: string; // Code for expo-speech TTS
 }
 
-const LANGUAGES: Language[] = [
-  { code: 'en-US', label: 'English', flag: '🇺🇸', speechCode: 'en-US' },
-  { code: 'zh-CN', label: '中文 (简体)', flag: '🇨🇳', speechCode: 'zh-CN' },
-  { code: 'zh-TW', label: '中文 (繁體)', flag: '🇹🇼', speechCode: 'zh-TW' },
-  { code: 'es-ES', label: 'Español', flag: '🇪🇸', speechCode: 'es-ES' },
-  { code: 'fr-FR', label: 'Français', flag: '🇫🇷', speechCode: 'fr-FR' },
-  { code: 'de-DE', label: 'Deutsch', flag: '🇩🇪', speechCode: 'de-DE' },
-  { code: 'ja-JP', label: '日本語', flag: '🇯🇵', speechCode: 'ja-JP' },
-  { code: 'ko-KR', label: '한국어', flag: '🇰🇷', speechCode: 'ko-KR' },
-  { code: 'hi-IN', label: 'हिन्दी', flag: '🇮🇳', speechCode: 'hi-IN' },
-  { code: 'pt-BR', label: 'Português', flag: '🇧🇷', speechCode: 'pt-BR' },
-  { code: 'ar-SA', label: 'العربية', flag: '🇸🇦', speechCode: 'ar-SA' },
-  { code: 'vi-VN', label: 'Tiếng Việt', flag: '🇻🇳', speechCode: 'vi-VN' },
-  { code: 'tl-PH', label: 'Tagalog', flag: '🇵🇭', speechCode: 'fil-PH' },
-  { code: 'ru-RU', label: 'Русский', flag: '🇷🇺', speechCode: 'ru-RU' },
-  { code: 'it-IT', label: 'Italiano', flag: '🇮🇹', speechCode: 'it-IT' },
-];
 
 // ─── Multi-language voice commands ─────────────────────────────
 // Each command has patterns in multiple languages
@@ -213,6 +200,27 @@ const VOICE_COMMANDS: VoiceCommand[] = [
     },
     target: 'Help',
     responses: { en: 'Opening Help', zh: '正在打开帮助', es: 'Abriendo Ayuda', fr: 'Ouverture de l\'Aide', de: 'Hilfe wird geöffnet', ja: 'ヘルプを開きます', ko: '도움말을 엽니다', hi: 'मदद खोल रहे हैं', pt: 'Abrindo Ajuda', ar: 'فتح المساعدة', vi: 'Đang mở trợ giúp', tl: 'Binubuksan ang tulong', ru: 'Открываю помощь', it: 'Apertura Aiuto' },
+  },
+  // ── Navigation: Diet ──
+  {
+    patterns: {
+      en: ['go to diet', 'open diet', 'diet', 'nutrition', 'healthy eating', 'meal plan', 'wellness', 'compass', 'open compass', 'compass ai', 'open ai', 'ask ai'],
+      zh: ['打开饮食', '饮食', '营养', '健康饮食', '膳食计划'],
+      es: ['ir a dieta', 'dieta', 'nutrición', 'alimentación saludable'],
+      fr: ['ouvrir régime', 'régime', 'nutrition', 'alimentation saine'],
+      de: ['öffne ernährung', 'ernährung', 'diät', 'gesunde ernährung'],
+      ja: ['食事を開く', '食事', '栄養', '健康的な食事'],
+      ko: ['식단 열기', '식단', '영양', '건강한 식사'],
+      hi: ['आहार खोलें', 'आहार', 'पोषण', 'स्वस्थ भोजन'],
+      pt: ['abrir dieta', 'dieta', 'nutrição', 'alimentação saudável'],
+      ar: ['فتح النظام الغذائي', 'حمية', 'تغذية', 'أكل صحي'],
+      vi: ['mở chế độ ăn', 'chế độ ăn', 'dinh dưỡng', 'ăn uống lành mạnh'],
+      tl: ['buksan diyeta', 'diyeta', 'nutrisyon', 'malusog na pagkain'],
+      ru: ['открыть диету', 'диета', 'питание', 'здоровое питание'],
+      it: ['apri dieta', 'dieta', 'nutrizione', 'alimentazione sana'],
+    },
+    target: 'Diet',
+    responses: { en: 'Opening Diet & Wellness', zh: '正在打开饮食与健康', es: 'Abriendo Dieta', fr: 'Ouverture Régime', de: 'Ernährung wird geöffnet', ja: '食事を開きます', ko: '식단을 엽니다', hi: 'आहार खोल रहे हैं', pt: 'Abrindo Dieta', ar: 'فتح النظام الغذائي', vi: 'Đang mở chế độ ăn', tl: 'Binubuksan ang diyeta', ru: 'Открываю диету', it: 'Apertura Dieta' },
   },
   // ── Games ──
   {
@@ -464,6 +472,29 @@ export default function VoiceCommandButton({ onNavigate }: VoiceCommandButtonPro
     }
   }, [emergencyContacts, profile.name, selectedLang]);
 
+  // ─── AI fallback for unrecognized voice input ──────────────
+  const askAI = useCallback(async (text: string, langCode: string) => {
+    try {
+      const res = await fetch(`${API_BASE}/api/ai-chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [{ role: 'user', content: text }],
+          system: `You are Compass AI, a friendly voice assistant for BridgeApp — an app connecting seniors and children. The user spoke to you via voice. You can help with ANYTHING: health, nutrition, exercise, technology, daily planning, recipes, history, science, emotional support, games tips, general knowledge, and casual conversation. Give a brief, helpful answer (under 80 words). Be warm and supportive. Respond in the same language as the user's message. Language code: ${langCode}.`,
+        }),
+      });
+      const data = await res.json();
+      if (data.reply) {
+        setStatus(data.reply);
+        Speech.speak(data.reply, { language: selectedLang.speechCode, rate: 0.9 });
+      } else {
+        setStatus(tApp('voice.notUnderstood'));
+      }
+    } catch {
+      setStatus(tApp('voice.notUnderstood'));
+    }
+  }, [selectedLang, tApp]);
+
   const handleCommand = useCallback((match: { target: string; response: string; action?: 'sendSOS' }) => {
     setStatus(match.response);
     Speech.speak(match.response, { language: selectedLang.speechCode, rate: 1.0 });
@@ -539,12 +570,17 @@ export default function VoiceCommandButton({ onNavigate }: VoiceCommandButtonPro
         if (match) {
           handleCommand(match);
         } else {
+          // No command matched — send to Compass AI for a helpful response
           const prefix = getLangPrefix(selectedLang.code);
-          const notUnderstood = prefix === 'zh' ? `没有理解 "${finalTranscript}"。试试说 "发送求救" 或 "打开游戏"。` :
-            prefix === 'es' ? `No entendí "${finalTranscript}". Intente "Enviar SOS" o "Ir a juegos".` :
-            prefix === 'fr' ? `Je n'ai pas compris "${finalTranscript}". Essayez "Envoyer SOS" ou "Ouvrir jeux".` :
-            `I didn't understand "${finalTranscript}". Try "Send SOS" or "Go to games".`;
-          setStatus(notUnderstood);
+          const thinkingText = prefix === 'zh' ? '让我想想...' :
+            prefix === 'ja' ? '考えています...' :
+            prefix === 'es' ? 'Déjame pensar...' :
+            prefix === 'fr' ? 'Laissez-moi réfléchir...' :
+            prefix === 'de' ? 'Lass mich nachdenken...' :
+            prefix === 'ko' ? '생각하고 있어요...' :
+            'Let me think about that...';
+          setStatus(thinkingText);
+          askAI(finalTranscript, selectedLang.code);
         }
       }
     };
@@ -688,6 +724,12 @@ export default function VoiceCommandButton({ onNavigate }: VoiceCommandButtonPro
                   <CommandExample text={`"${examples.sosExample}"`} highlight />
                   <CommandExample text={`"${examples.gamesExample}"`} />
                   <CommandExample text={`"${examples.chatExample}"`} />
+                  <View style={{ marginTop: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: Colors.border }}>
+                    <Text style={styles.commandsHeader}>Or ask anything:</Text>
+                    <CommandExample text={'"What should I eat for dinner?"'} ai />
+                    <CommandExample text={'"How do I send a photo?"'} ai />
+                    <CommandExample text={'"Tell me a fun fact"'} ai />
+                  </View>
                 </View>
 
                 {!listening && !sendingSOS && (
@@ -707,15 +749,15 @@ export default function VoiceCommandButton({ onNavigate }: VoiceCommandButtonPro
   );
 }
 
-function CommandExample({ text, highlight }: { text: string; highlight?: boolean }) {
+function CommandExample({ text, highlight, ai }: { text: string; highlight?: boolean; ai?: boolean }) {
   return (
     <View style={styles.cmdRow}>
       <Ionicons
-        name={highlight ? 'alert-circle' : 'chatbubble-outline'}
+        name={highlight ? 'alert-circle' : ai ? 'compass-outline' : 'chatbubble-outline'}
         size={14}
-        color={highlight ? Colors.danger : Colors.primaryLight}
+        color={highlight ? Colors.danger : ai ? Colors.primary : Colors.primaryLight}
       />
-      <Text style={[styles.cmdText, highlight && styles.cmdTextHighlight]}>{text}</Text>
+      <Text style={[styles.cmdText, highlight && styles.cmdTextHighlight, ai && styles.cmdTextAI]}>{text}</Text>
     </View>
   );
 }
@@ -888,6 +930,10 @@ const styles = StyleSheet.create({
   cmdTextHighlight: {
     fontWeight: '700',
     color: Colors.danger,
+  },
+  cmdTextAI: {
+    color: Colors.primary,
+    fontStyle: 'italic',
   },
   retryBtn: {
     flexDirection: 'row',

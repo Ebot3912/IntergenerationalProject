@@ -18,6 +18,7 @@ import ScheduleScreen from '../screens/ScheduleScreen';
 import ChatScreen from '../screens/ChatScreen';
 import ConversationScreen from '../screens/ConversationScreen';
 import HelpScreen from '../screens/HelpScreen';
+import DietScreen from '../screens/DietScreen';
 import ChessGame from '../screens/games/ChessGame';
 import ConnectFourGame from '../screens/games/ConnectFourGame';
 import PokerGame from '../screens/games/PokerGame';
@@ -136,6 +137,16 @@ function MainTabs() {
         }}
       />
       <Tab.Screen
+        name="Diet"
+        component={DietScreen}
+        options={{
+          tabBarLabel: t('tabs.diet'),
+          tabBarIcon: ({ focused, size }) => (
+            <TabIcon name={focused ? 'compass' : 'compass-outline'} focused={focused} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
@@ -159,7 +170,7 @@ export default function AppNavigator() {
     if (!nav) return;
 
     // Tab screens
-    const tabScreens = ['Games', 'Schedule', 'SOS', 'Chat', 'Help', 'Profile'];
+    const tabScreens = ['Games', 'Schedule', 'SOS', 'Chat', 'Help', 'Diet', 'Profile'];
     if (tabScreens.includes(screen)) {
       nav.navigate(screen);
       return;
