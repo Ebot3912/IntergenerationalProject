@@ -11,11 +11,7 @@ import { useApp } from '../context/AppContext';
 import { useLanguage } from '../context/LanguageContext';
 import { Colors, FontSizes, Spacing, BorderRadius, Shadow } from '../utils/theme';
 
-// ─── API endpoint for fully automatic sending ───────────────────
-// Uses Vercel serverless function for zero-click SMS & Email
-const API_URL = __DEV__
-  ? 'http://localhost:3000/api/send-sos'  // local dev (won't work on phone)
-  : 'https://bridgeapp-sos.vercel.app/api/send-sos';
+import { SOS_API_URL } from '../config/api';
 
 export default function SOSScreen() {
   const { emergencyContacts, profile } = useApp();
@@ -39,18 +35,19 @@ export default function SOSScreen() {
     return () => pulse.stop();
   }, []);
 
-  const getLocation = async (): Promise<string> => {
+  const getLocation = async (): Promise<{ url: string; text: string | null }> => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== 'granted') {
-      return 'Location unavailable (permission denied)';
+      return { url: 'Location unavailable (permission denied)', text: null };
     }
     try {
       const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
       const { latitude, longitude } = loc.coords;
-      setLocationText(`${latitude.toFixed(5)}, ${longitude.toFixed(5)}`);
-      return `https://maps.google.com/?q=${latitude},${longitude}`;
+      const text = `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
+      setLocationText(text);
+      return { url: `https://maps.google.com/?q=${latitude},${longitude}`, text };
     } catch {
-      return 'Location unavailable';
+      return { url: 'Location unavailable', text: null };
     }
   };
 
@@ -61,7 +58,7 @@ export default function SOSScreen() {
     errors: string[];
   }> => {
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(SOS_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -135,9 +132,9 @@ export default function SOSScreen() {
 
     setSending(true);
     try {
-      const locationUrl = await getLocation();
+      const location = await getLocation();
       const senderName = profile.name || 'Someone';
-      const message = `EMERGENCY ALERT\n\n${senderName} needs help!\n\nLocation: ${locationUrl}\n\nPlease call or check on them immediately.\n\n— Sent via BridgeApp SOS`;
+      const message = `EMERGENCY ALERT\n\n${senderName} needs help!\n\nLocation: ${location.url}\n\nPlease call or check on them immediately.\n\n— Sent via BridgeApp SOS`;
       const subject = `EMERGENCY: ${senderName} Needs Help`;
 
       const phones = emergencyContacts.map(c => c.phone).filter(Boolean);
@@ -184,7 +181,7 @@ export default function SOSScreen() {
       const statusLines: string[] = [];
       if (smsSent) statusLines.push('✅ SMS sent automatically');
       if (emailSent) statusLines.push('✅ Email sent automatically');
-      if (locationText) statusLines.push(`📍 Location: ${locationText}`);
+      if (location.text) statusLines.push(`📍 Location: ${location.text}`);
       if (errors.length > 0) statusLines.push(`\n⚠️ Notes:\n${errors.join('\n')}`);
 
       Alert.alert(

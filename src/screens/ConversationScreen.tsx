@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  TextInput, Image, SafeAreaView, StatusBar, KeyboardAvoidingView, Platform,
+  TextInput, Image, SafeAreaView, StatusBar, KeyboardAvoidingView, Platform, Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp, ChatMessage, Friend } from '../context/AppContext';
@@ -57,7 +57,8 @@ export default function ConversationScreen({ route, navigation }: any) {
       ];
       seed.forEach(m => addMessage(m));
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [friend.id]);
 
   const sendMessage = async () => {
     if (!text.trim()) return;
@@ -77,12 +78,12 @@ export default function ConversationScreen({ route, navigation }: any) {
     // Auto-reply after a short delay
     setTimeout(async () => {
       const reply: ChatMessage = {
-        id: (Date.now() + 1).toString(),
+        id: `${friend.id}-reply-${Math.random().toString(36).slice(2)}`,
         text: AUTO_REPLIES[Math.floor(Math.random() * AUTO_REPLIES.length)],
         senderId: friend.id,
         senderName: friend.name,
         senderPhoto: friend.photoUri,
-        timestamp: Date.now() + 1,
+        timestamp: Date.now(),
         conversationId: friend.id,
       };
       await addMessage(reply);
@@ -116,7 +117,10 @@ export default function ConversationScreen({ route, navigation }: any) {
           <Text style={styles.headerStatus}>{friend.online ? `🟢 ${t('conversation.online')}` : t('conversation.offline')}</Text>
         </View>
 
-        <TouchableOpacity style={styles.headerAction}>
+        <TouchableOpacity
+          style={styles.headerAction}
+          onPress={() => Alert.alert('Coming Soon', 'Voice calling will be available in a future update.')}
+        >
           <Ionicons name="call-outline" size={22} color={Colors.primary} />
         </TouchableOpacity>
       </View>

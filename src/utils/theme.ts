@@ -10,8 +10,10 @@ export const Colors = {
   cardBg: '#FFFFFF',
   surface: '#FFFFFF',
   text: '#1A1A2E',
+  textPrimary: '#1A1A2E',    // alias for text
   textSecondary: '#6B7280',
   textLight: '#9CA3AF',
+  textTertiary: '#9CA3AF',   // alias for textLight
   border: '#E5E7EB',
   danger: '#EF4444',
   dangerDark: '#DC2626',

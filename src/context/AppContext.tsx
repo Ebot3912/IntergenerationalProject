@@ -198,7 +198,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (se) setScheduleEvents(JSON.parse(se));
       if (msgs) setMessages(JSON.parse(msgs));
       if (fr) setFriends(JSON.parse(fr));
-    } catch {}
+    } catch (err) {
+      console.warn('loadFromLocal: failed to parse stored data:', err);
+    }
   };
 
   const userId = user?.uid || null;

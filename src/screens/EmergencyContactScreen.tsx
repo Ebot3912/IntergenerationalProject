@@ -111,7 +111,7 @@ export default function EmergencyContactScreen({ onClose }: Props) {
           </View>
         ) : (
           <View style={styles.contactsList}>
-            <Text style={styles.sectionTitle}>{emergencyContacts.length} Contact{emergencyContacts.length !== 1 ? 's' : ''}</Text>
+            <Text style={styles.sectionTitle}>{emergencyContacts.length} {t('emergency.title')}</Text>
             {emergencyContacts.map((contact, index) => (
               <View key={contact.id} style={[styles.contactCard, index === 0 && styles.primaryContact]}>
                 {index === 0 && (

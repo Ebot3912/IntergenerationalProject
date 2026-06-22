@@ -13,6 +13,7 @@
     },
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.bridgeapp.intergenerational",
       "infoPlist": {
         "NSCameraUsageDescription": "We need your camera to take a profile photo.",
         "NSPhotoLibraryUsageDescription": "We need access to your photos to set a profile picture.",
@@ -21,6 +22,7 @@
       }
     },
     "android": {
+      "package": "com.bridgeapp.intergenerational",
       "adaptiveIcon": {
         "backgroundColor": "#6B48FF",
         "foregroundImage": "./assets/android-icon-foreground.png"

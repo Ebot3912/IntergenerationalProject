@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  TextInput, Image, SafeAreaView, StatusBar,
+  TextInput, Image, SafeAreaView, StatusBar, Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp, Friend } from '../context/AppContext';
@@ -54,7 +54,10 @@ export default function ChatScreen({ navigation }: any) {
           <Text style={styles.headerTitle}>{t('chat.title')}</Text>
           <Text style={styles.headerSubtitle}>{friends.length} {t('chat.connections')}</Text>
         </View>
-        <TouchableOpacity style={styles.newChatBtn}>
+        <TouchableOpacity
+          style={styles.newChatBtn}
+          onPress={() => Alert.alert('Coming Soon', 'Adding new contacts will be available in a future update.')}
+        >
           <Ionicons name="create-outline" size={22} color={Colors.primary} />
         </TouchableOpacity>
       </View>

@@ -1,23 +1,13 @@
 import { Alert, Platform } from 'react-native';
 import * as Location from 'expo-location';
-
-// API endpoint for fully automatic sending
-const API_URL = __DEV__
-  ? 'http://localhost:3000/api/send-sos'
-  : 'https://bridgeapp-sos.vercel.app/api/send-sos';
+import { SOS_API_URL } from '../config/api';
+import { EmergencyContact } from '../context/AppContext';
 
 export interface SOSResult {
   smsSent: boolean;
   emailSent: boolean;
   locationText: string | null;
   errors: string[];
-}
-
-export interface EmergencyContact {
-  id: string;
-  name: string;
-  phone: string;
-  email?: string;
 }
 
 async function getLocation(): Promise<{ url: string; text: string | null }> {
@@ -44,7 +34,7 @@ async function sendViaAPI(
   senderName: string
 ): Promise<{ smsSent: boolean; emailSent: boolean; errors: string[] }> {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(SOS_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ phones, emails, message, subject, senderName }),

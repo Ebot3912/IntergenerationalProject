@@ -104,13 +104,10 @@ export default function GamesScreen({ navigation }: any) {
                   </View>
                 </View>
               </View>
-              <TouchableOpacity
-                style={[styles.playBtn, { backgroundColor: game.accentColor }]}
-                onPress={() => navigation.navigate(game.id)}
-              >
+              <View style={[styles.playBtn, { backgroundColor: game.accentColor }]}>
                 <Ionicons name="play" size={18} color={game.color} />
                 <Text style={[styles.playBtnText, { color: game.color }]}>Play</Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </TouchableOpacity>
         ))}

@@ -12,7 +12,11 @@
       "Bash(mkdir -p dist/fonts)",
       "Bash(cp dist/assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/*.ttf dist/fonts/)",
       "Bash(bash scripts/post-export.sh)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(curl -s -X POST https://bridgeapp-sos.vercel.app/api/ai-chat -H 'Content-Type: application/json' -d '{\"\"\"\"messages\"\"\"\":[{\"\"\"\"role\"\"\"\":\"\"\"\"user\"\"\"\",\"\"\"\"content\"\"\"\":\"\"\"\"What should I eat for breakfast?\"\"\"\"}]}')",
+      "Bash(printf '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')",
+      "Bash(curl -s -X POST https://bridgeapp-sos.vercel.app/api/ai-chat -H 'Content-Type: application/json' -d '{\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"What should I eat for breakfast?\"\"}]}')",
+      "Bash(node -e \":*)"
     ]
   }
 }

@@ -24,9 +24,6 @@ const EVENT_COLORS = [
   Colors.accentBlue, Colors.accent, Colors.warning,
 ];
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'];
 
 function getDaysInMonth(year: number, month: number) {
   return new Date(year, month + 1, 0).getDate();
@@ -40,9 +37,9 @@ function formatDate(d: Date) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
-function formatDisplayDate(dateStr: string) {
+function formatDisplayDate(dateStr: string, locale: string) {
   const [y, m, d] = dateStr.split('-').map(Number);
-  return `${MONTHS[m - 1]} ${d}, ${y}`;
+  return new Intl.DateTimeFormat(locale, { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(y, m - 1, d));
 }
 
 const emptyEvent = (): ScheduleEvent => ({
@@ -52,7 +49,7 @@ const emptyEvent = (): ScheduleEvent => ({
 });
 
 export default function ScheduleScreen() {
-  const { t } = useLanguage();
+  const { t, langOption } = useLanguage();
   const { scheduleEvents, addScheduleEvent, updateScheduleEvent, removeScheduleEvent } = useApp();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(formatDate(new Date()));
@@ -144,8 +141,14 @@ export default function ScheduleScreen() {
   };
 
   // Calendar helpers
+  const locale = langOption.speechCode;
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
+  // Localized day abbreviations (Sun=index 0 = Jan 2 2000)
+  const DAYS = Array.from({ length: 7 }, (_, i) =>
+    new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(new Date(2000, 0, 2 + i))
+  );
+  const monthName = new Intl.DateTimeFormat(locale, { month: 'long' }).format(currentDate);
   const daysInMonth = getDaysInMonth(year, month);
   const firstDay = getFirstDayOfMonth(year, month);
   const today = formatDate(new Date());
@@ -184,7 +187,7 @@ export default function ScheduleScreen() {
             <TouchableOpacity onPress={prevMonth} style={styles.navBtn}>
               <Ionicons name="chevron-back" size={22} color={Colors.primary} />
             </TouchableOpacity>
-            <Text style={styles.monthTitle}>{MONTHS[month]} {year}</Text>
+            <Text style={styles.monthTitle}>{monthName} {year}</Text>
             <TouchableOpacity onPress={nextMonth} style={styles.navBtn}>
               <Ionicons name="chevron-forward" size={22} color={Colors.primary} />
             </TouchableOpacity>
@@ -234,11 +237,11 @@ export default function ScheduleScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>
-              {selectedDate === today ? t('schedule.todayEvents') : formatDisplayDate(selectedDate)}
+              {selectedDate === today ? t('schedule.todayEvents') : formatDisplayDate(selectedDate, locale)}
             </Text>
             <TouchableOpacity style={styles.addEventBtn} onPress={openAdd}>
               <Ionicons name="add-circle" size={20} color={Colors.primary} />
-              <Text style={styles.addEventBtnText}>Add</Text>
+              <Text style={styles.addEventBtnText}>{t('schedule.newEvent')}</Text>
             </TouchableOpacity>
           </View>
 
