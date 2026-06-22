@@ -75,6 +75,7 @@ function MainTabs() {
   return (
     <Tab.Navigator
       id="MainTabs"
+      initialRouteName="SOS"
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.tabBar,
